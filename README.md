@@ -30,7 +30,7 @@ bash finetune_sd-v1-4.sh
 arg[0] = model type in {'sd', 'ft'}
 arg[1] = GPU_NUM
 args[2] = rounds (num of images to generate for each race)
-'''
+```
 
 run:
 
