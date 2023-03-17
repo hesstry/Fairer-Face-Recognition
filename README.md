@@ -27,22 +27,30 @@ bash finetune_sd-v1-4.sh
 **IF DOING FACE GENERATION BY RACE TO MIMIC PROJECT:**
 
 ```
-arg1 = model type in {'sd', 'ft'}
-arg2 = GPU_NUM
-args3 = rounds (num of images to generate for each race)
+arg[0] = model type in {'sd', 'ft'}
+arg[1] = GPU_NUM
+args[2] = rounds (num of images to generate for each race)
+'''
 
+run:
+
+```
 python {path to generate_imgs.py} {model type} {GPU index} {img count}
 ```
 
 **IF PLAYING IN STABLE DIFFUSION PLAYGROUND:**
 
 ```
-arg1 = model type {sd, ft}
-arg2 = GPU_NUM
-args3 = rounds (num of images to generate for each race)
-args4 = prompt to give diffusion model
-args5 = file name to store image under, no need for file extension
+arg[0] = model type {sd, ft}
+arg[1] = GPU_NUM
+args[2] = rounds (num of images to generate for each race)
+args[3] = prompt to give diffusion model
+args[4] = file name to store image under, no need for file extension
+```
 
+run:
+
+```
 python {path to generate_imgs.py} {model type} {GPU index} {img count} {prompt} {img name}
 ```
 
