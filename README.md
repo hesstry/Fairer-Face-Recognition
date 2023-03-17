@@ -6,4 +6,5 @@ References:
 
 [1] Alexander Quinn Nichol, Prafulla Dhariwal, Aditya Ramesh, Pranav Shyam, Pamela Mishkin, Bob McGrew, Ilya Sutskever, and Mark Chen. 2022. GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models. In Proceedings of the International Conference on Machine Learning (ICML).
 - Showed that preprocessing won't mitigate bias completely in their section on Safety Considerations
-[2] Stable Diffusion 
+[2] Stable Diffusion - https://stability.ai/blog/stable-diffusion-public-release
+[3] FairDiffusion - interesting project that has good discussion of bias in datasets used to train Stable Diffusion
