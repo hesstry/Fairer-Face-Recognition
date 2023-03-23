@@ -60,7 +60,7 @@ They will be saved in "./data/imgs_jpg/sd_v1_4_imgs/"
 
 ## Training and Evaluating the Classifier
 
-The python script that contains all code relevant for training and evaluating of VGG-Face can be found in train_evaluate_classifier.py
+The python script that contains all code relevant for training and evaluating of VGG-Face can be found in ./FairfaceThingsv2/train_evaluate_classifier.py
 
 References:
 
