@@ -5,7 +5,8 @@ import sys
 import numpy as np
 
 FINETUNED_MODEL_PATH = "./../model_save"
-SD_V1_4_MODEL_PATH = "CompVis/stable-diffusion-v1-4"
+# SD_V1_4_MODEL_PATH = "CompVis/stable-diffusion-v1-4"
+SD_V1_4_MODEL_PATH = "runwayml/stable-diffusion-v1-5"
 GPU_NUM = 0
 IMGS_PATH = './data/imgs_jpg/'
 SD_V1_4_IMG_PATH = IMGS_PATH+'sd_v1_4_imgs/'
@@ -59,8 +60,10 @@ def is_valid_img(img):
 
 def gen_imgs_race(race, path_race, imgs_path, rounds, pipe):
 
+    prompt_img_quality = 'detailed'
+
     # Check whether the specified path exists or not, create it if not
-    path = imgs_path+path_race+'/'
+    path = imgs_path+path_race + '/'
     print(f"GOING TO SAVE TO PATH: {path}")
     isExist = os.path.exists(path)
     if not isExist:
@@ -68,9 +71,6 @@ def gen_imgs_race(race, path_race, imgs_path, rounds, pipe):
 
     # keep track of valid image count so we have "valid" image sets for each race of same length
     face_counter = 0
-    # TODO make sure you return to prompt 'detailed' 
-    # TODO I guess I used 'real photo face of {race} person' for the prompt
-    prompt_img_quality = 'real photo'
 
     while face_counter < rounds:
 
@@ -97,9 +97,12 @@ def generate_all_imgs(model_path, gpu_num, rounds):
     else:
         imgs_path = IMGS_PATH
 
+
     path_races = get_path_races()
 
     for race, path_race in zip(races, path_races):
+        path = imgs_path+path_race + '/'
+        print(f"GOING TO SAVE TO PATH: {path}\n")
         print(f"Getting img for race:{race}\n with path_race: {path_race}\nNum imgs generating: {rounds}")
         gen_imgs_race(race, path_race, imgs_path, rounds, pipe)
 
@@ -121,7 +124,7 @@ def sd_playground(model_path, gpu_num, rounds, prompt, img_name):
         img_path = path+f'{img_name}_{img_counter}.jpg'
         img = pipe(prompt=f"{prompt}",
                             num_images_per_prompt=1,
-                            num_inference_steps = 50, 
+                            num_inference_steps = 100, 
                             guidance_scale=5).images[0]
         
         if is_valid_img(img):
