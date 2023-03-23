@@ -17,7 +17,7 @@ python preprocess_ff.py
 run:
 
 ```
-bash finetune_sd-v1-4.sh
+bash finetune__sd-v1-4.sh
 ```
 
 **The fine tuned model will be stored in: './model_save'**
@@ -38,6 +38,8 @@ run:
 python {path to generate_imgs.py} {model type} {GPU index} {img count}
 ```
 
+It will be saved in "./data/imgs_jpg"
+
 **IF PLAYING IN STABLE DIFFUSION PLAYGROUND:**
 
 ```
@@ -54,11 +56,14 @@ run:
 python {path to generate_imgs.py} {model type} {GPU index} {img count} {prompt} {img name}
 ```
 
+They will be saved in "./data/imgs_jpg/sd_v1_4_imgs/"
+
+## Training and Evaluating the Classifier
+
+The python script that contains all code relevant for training and evaluating of VGG-Face can be found in train_evaluate_classifier.py
+
 References:
 
-[1] Alexander Quinn Nichol, Prafulla Dhariwal, Aditya Ramesh, Pranav Shyam, Pamela Mishkin, Bob McGrew, Ilya Sutskever, and Mark Chen. 2022. GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models. In Proceedings of the International Conference on Machine Learning (ICML).
-- Showed that preprocessing won't mitigate bias completely in their section on Safety Considerations
-
-[2] Stable Diffusion - https://stability.ai/blog/stable-diffusion-public-release
-
-[3] FairDiffusion - interesting project that has good discussion of bias in datasets used to train Stable Diffusion
+Stable Diffusion - https://stability.ai/blog/stable-diffusion-public-release
+Huggingface - https://huggingface.co/
+FairFace - https://huggingface.co/datasets/HuggingFaceM4/FairFace
