@@ -62,8 +62,11 @@ They will be saved in "./data/imgs_jpg/sd_v1_4_imgs/"
 
 The python script that contains all code relevant for training and evaluating of VGG-Face can be found in ./FairfaceThingsv2/train_evaluate_classifier.py
 
+## Project result Replication
+Data and VGG weights used to replicate this project can be accessed here: https://drive.google.com/drive/folders/1r4nrt-yPETN4fcgkuJyG5WOG2SrOktIh?usp=share_link.
+
 References:
 
 Stable Diffusion - https://stability.ai/blog/stable-diffusion-public-release
 Huggingface - https://huggingface.co/
-FairFace - https://huggingface.co/datasets/HuggingFaceM4/FairFace
+FairFace - https://huggingface.co/datasets/HuggingFaceM4/FairFace# FairFaceGAN
